@@ -218,12 +218,11 @@ void Swiat::ruchOrg() {
 		});
 	for (int i = 0; i < organizmy.size(); i++) {
 		auto* org = organizmy[i];
-		if (org->czyZyje()) {
+		if (org->czyZyje() && org->getWiek() != 0) {
 			org->akcja();
 			org->kolizja();
-			org->starzenie();
 		}
-
+		org->starzenie();
 	}
 	cout << '\n';
 }
