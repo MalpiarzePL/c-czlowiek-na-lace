@@ -11,6 +11,6 @@ public:
 	int getY();
 	bool pozaPolem(int wys, int szer);
 	bool operator==(Punkt pkt) const;
-	Punkt operator+(Punkt pkt) const;
-	Punkt operator-(Punkt pkt) const;
+	Punkt operator+(Punkt pkt) ;
+	Punkt operator-(Punkt pkt) ;
 };
