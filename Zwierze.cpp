@@ -24,10 +24,10 @@ void Zwierze::kolizja() {
 	if (org == nullptr)
 		return;
 	if (org->getName() == this->getName()) {
-		this->getPolozenie() = prevPoz;
+		//this->getPolozenie() = prevPoz;
+		this->cofnij();
 		if (!org->czyRozmnozony() && !this->czyRozmnozony()) {
 			rozmnazanie((Zwierze*)org);
-
 		}
 	}
 	else
@@ -107,9 +107,6 @@ void Zwierze::walka(Organizm* org) {
 	}
 }
 
-void Zwierze::reakcjaOrg(Organizm* org) {
-
-}
 
 void Zwierze::cofnij() {
 	this->setPolozenie(prevPoz);
