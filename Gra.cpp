@@ -7,7 +7,7 @@
 #include "BarszczSosnowskiego.h"
 #include "Mlecz.h"
 #include "Zolw.h"
-#include "Lis.h"
+#include "Wilk.h"
 #include "Owca.h"
 #include "Antylopa.h"
 #include "Wilk.h"
@@ -16,7 +16,7 @@
 #include <conio.h>
 
 void Gra::graj() {
-	tworzSwiat();
+	tworzSwiat2();
 	while (true) {
 		rysujInterfejs();
 		swiat->rysujSwiat();
@@ -57,7 +57,7 @@ void Gra::wczytajZapis() {
 		else if (str == "ANTYLOPA")
 			org = new Antylopa(sila, wiek, { polX,polY });
 		else if (str == "LIS")
-			org = new Lis(sila, wiek, { polX,polY });
+			org = new Wilk(sila, wiek, { polX,polY });
 		else if (str == "OWCA")
 			org = new Owca(sila, wiek, { polX,polY });
 		else if (str == "WILK")
@@ -72,24 +72,19 @@ void Gra::wczytajZapis() {
 }
 
 void Gra::tworzSwiat() {
-	swiat = new Swiat(10, 10, {
-	new Lis({2,0}),
-	new WilczeJagody({1,0}),
-	new WilczeJagody({1,1}),
-	new WilczeJagody({1,2}),
-	new WilczeJagody({1,3}),
-	new WilczeJagody({1,4}),
-	new WilczeJagody({1,5}),
-	new WilczeJagody({1,6}),
-	new WilczeJagody({1,7}),
-	new WilczeJagody({3,0}),
-	new WilczeJagody({3,1}),
-	new WilczeJagody({3,2}),
-	new WilczeJagody({3,3}),
-	new WilczeJagody({3,4}),
-	new WilczeJagody({3,5}),
-	new WilczeJagody({3,6}),
-	new WilczeJagody({3,7}),
+	swiat = new Swiat(5, 5, {
+	//new Wilk({2,0}),
+	//new Wilk({1,0}),
+	new Wilk({1,1}),
+	new Wilk({1,2}),
+	new Wilk({1,3}),
+	//new Wilk({1,4}),
+	//new Wilk({3,0}),
+	new Wilk({3,1}),
+	new Wilk({3,2}),
+	new Wilk({3,3}),
+	//new Wilk({3,4}),
+
 	new Czlowiek({0,0})
 		});
 	for (Organizm* org : swiat->getOrganizmy())
@@ -99,7 +94,7 @@ void Gra::tworzSwiat() {
 void Gra::rysujInterfejs() {
 	system("cls");
 	swiat->getKomentator().wypisz();
-	cout << "Adam Bia³ek 193677\n";
+	cout << "Adam BiaÅ‚ek 193677\n";
 	cout << "Poruszanie: strzalki\n";
 	cout << "Moc: r\n";
 	cout << "Zapisz gre: s\n";
@@ -108,7 +103,7 @@ void Gra::rysujInterfejs() {
 	cout << "Owca: O\n";
 	cout << "Zolw: \033[32mZ\033[0m\n";
 	cout << "Antylopa: \033[38;2;139;69;19mA\033[0m\n";
-	cout << "Lis: \033[38;5;208mL\033[0m\n";
+	cout << "Wilk: \033[38;5;208mL\033[0m\n";
 	cout << "Trawa: \x1b[42mT\x1b[0m\n";
 	cout << "Mlecz: \033[33mM\033[0m\n";
 	cout << "Guarana: \033[38;5;53mG\033[0m\n";
