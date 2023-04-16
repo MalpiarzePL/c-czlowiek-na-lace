@@ -16,11 +16,11 @@ bool Punkt::pozaPolem(int wys, int szer) {
 		return true;
 }
 
-Punkt Punkt::operator+(Punkt pkt) const {
+Punkt Punkt::operator+(Punkt pkt)  {
 	return { x + pkt.x, y + pkt.y };
 }
 
-Punkt Punkt::operator-(Punkt pkt) const {
+Punkt Punkt::operator-(Punkt pkt)  {
 	return { x - pkt.x, y - pkt.y };
 }
 
